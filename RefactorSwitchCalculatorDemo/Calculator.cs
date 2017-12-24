@@ -43,17 +43,17 @@ namespace RefactorSwitchDemo
 
     public static class CalculatorFactory
     {
-        private static readonly Dictionary<string, Func<ICalculate>> _calculatorMap = new Dictionary<string, Func<ICalculate>>
+        private static readonly Dictionary<string, Func<ICalculate>> CalculatorMap = new Dictionary<string, Func<ICalculate>>
         {
-            {"+", () => new Add()},
-            {"-", () => new Subtraction()},
-            {"*", () => new Multiply()},
-            {"/", () => new Divide()},
+            { "+", () => new Add() },
+            { "-", () => new Subtraction() },
+            { "*", () => new Multiply() },
+            { "/", () => new Divide() }
         };
 
-        public static ICalculate CreateCalculatorFromOperation(string operation)
+        public static ICalculate CreateCalculator(string operation)
         {
-            return _calculatorMap[operation]();
+            return CalculatorMap[operation]();
         }
-    }    
+    }
 }

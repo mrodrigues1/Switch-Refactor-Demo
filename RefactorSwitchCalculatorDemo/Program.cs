@@ -22,7 +22,7 @@ namespace RefactorSwitchDemo
 
             var operation = Console.ReadLine();
 
-            var calculator = CalculatorFactory.CreateCalculatorFromOperation(operation);
+            var calculator = CalculatorFactory.CreateCalculator(operation);
             double result = calculator.Calculate(number, number2);
             Console.WriteLine($"Result: {result}");
             Console.ReadLine();
